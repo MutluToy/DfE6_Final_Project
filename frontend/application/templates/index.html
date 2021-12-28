@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container" style="padding: 10px; ">
+  <br />
+  <div id="toolbar"></div>
+  <table id="table" data-toggle="true" data-toolbar="#toolbar" data-search="true" data-show-columns="true"
+    data-pagination="true" data-height="500">
+  </table>
+  <button class="btn"><a href="{{ url_for('create_region') }}">Add Property</a></button>
+
+</div>
+</div>
+<script type='text/javascript'>
+  $(window).load(function () {
+    var data = {{ data| tojson
+  }};
+  var columns = {{ columns| tojson}};
+  $("#table").on("click", "tr", function () {
+    horizSize = $(this).closest('tr').find('td:first').text();
+    window.location.href = "/update/" + horizSize;
+
+
+  });
+  $(function () {
+    $('#table').bootstrapTable({
+      data: data,
+      columns: columns,
+    });
+
+  });
+
+    });
+</script>
+{% endblock body %}

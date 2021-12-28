@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container"><br>
+    <center>
+        <h2>Edit Region</h2>
+    </center>
+</div>
+
+<div class=container><br>
+    <div class="row align-items-center justify-content-center">
+            <form action="" method="post" role="form">
+                <div class="form-group">
+
+                    <label for="region_name">Region Name:</label>
+                    <input type="text" class="form-control" id="region_name" name="region_name" placeholder="Name"
+                        value={{region.region_name}}>
+                    <br>
+                    <label for="region_property_address">Property Address:</label>
+                    <input type="text" class="form-control" id="region_property_address" name="region_property_address" placeholder="Property Address"
+                        value={{region.region_property_address}}>
+                    <br>
+                    <label for="region_price">Price:</label>
+                    <input type="number" class="form-control" id="region_price" name="region_price" placeholder="Price"
+                        value={{region.region_price}}>
+                    <br>
+                    <label for="description">Description:</label>
+                    <input type="text" class="form-control" id="description" name="description"
+                        placeholder="Enter a description" value={{region.description}}>
+
+                </div>
+                <br>
+
+                <center>
+                    <button type="submit" class="btn btn-success">Update Property</button>
+                    <button type="button" class="btn btn-error"> <a
+                            href="{{ url_for('delete_region', id=region.region_id) }}">Delete Property</a>
+                    </button>
+                </center>
+            </form>
+
+            <br>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+
+            {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+            <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+            </div>
+            {% endif %}
+
+            {% if "Error" in message[1]: %}
+            <div class="alert alert-danger">
+                <strong>Error: </strong> {{ message[1] }}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        <br>
+    </div>
+</div>
+{% endblock %}

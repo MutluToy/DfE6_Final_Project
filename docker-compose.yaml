@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  mysql:
+    container_name: flask_mysql
+    image: mysql:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env
+  frontend:
+    build: ./frontend
+    #image: ${DOCKER_HUB_CREDS_USR}/frontend:latest
+    container_name: frontend
+    ports:
+      - target: 5000
+        published: 80
+  backend:
+    build: ./backend
+    #image: ${DOCKER_HUB_CREDS_USR}/backend:latest
+    container_name: backend
+    env_file:
+    - .env
+    ports:
+      - target: 5000
+        published: 5000
+volumes:
+  # just a persistance data
+  mysql-data:
+    driver: local
