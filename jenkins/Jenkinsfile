@@ -9,7 +9,6 @@ pipeline {
         MYSQL_PASSWORD=credentials("MYSQL_PASSWORD")
         CREATE_SCHEMA=true
     }
-
     stages {
         stage('Setup') {
             steps {
