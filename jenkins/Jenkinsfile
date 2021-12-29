@@ -23,7 +23,10 @@ pipeline {
         }
         stage('Build') {
             steps {
+                docker.withRegistry( '', "$DOCKER_HUB_CREDS" ) {
                 sh "bash jenkins/build.sh"
+                 }
+                
             }
         }
         stage('Push') {
