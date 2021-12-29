@@ -8,19 +8,33 @@ services:
     restart: unless-stopped
     ports:
       - "3306:3306"
-    
+    environment:
+        - DOCKER_HUB_CREDS = ${DOCKER_HUB_CREDS}
+        - DATABASE_URI = ${DATABASE_URI}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}   
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - CREATE_SCHEMA=true
   frontend:
     build: ./frontend
-    #image: ${DOCKER_HUB_CREDS_USR}/frontend:latest
+    image: ${DOCKER_HUB_CREDS_USR}/frontend:latest
     container_name: frontend
     ports:
       - target: 5000
         published: 80
   backend:
     build: ./backend
-    #image: ${DOCKER_HUB_CREDS_USR}/backend:latest
+    image: ${DOCKER_HUB_CREDS_USR}/backend:latest
     container_name: backend
-
+    environment:
+        - DOCKER_HUB_CREDS = ${DOCKER_HUB_CREDS}
+        - DATABASE_URI = ${DATABASE_URI}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}   
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - CREATE_SCHEMA=true
     ports:
       - target: 5000
         published: 5000
