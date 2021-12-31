@@ -44,6 +44,10 @@ pipeline {
                 DOCKER_HUB_CREDS_USR=$DOCKER_HUB_CREDS_USR \
                 CREATE_SCHEMA=true \
                 DATABASE_URI=$DATABASE_URI \
+                MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD \
+                MYSQL_DATABASE=$MYSQL_DATABASE \
+                MYSQL_USER=$MYSQL_USER \   
+                MYSQL_PASSWORD=$MYSQL_PASSWORD \
                 docker stack deploy --compose-file docker-compose.yaml DFE-project"                
             }
         }
