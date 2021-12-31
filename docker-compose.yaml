@@ -10,7 +10,7 @@ services:
       - "3306:3306"
     environment:
         - DOCKER_HUB_CREDS = ${DOCKER_HUB_CREDS}
-        - DATABASE_URI = ${DATABASE_URI}
+        - DATABASE_URI=mysql+pymysql://flask:flask@mysql/flask
         - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
         - MYSQL_DATABASE=${MYSQL_DATABASE}
         - MYSQL_USER=${MYSQL_USER}   
@@ -22,14 +22,14 @@ services:
     container_name: frontend
     ports:
       - target: 5000
-        published: 8080
+        published: 80
   backend:
     build: ./backend
     image: ${DOCKER_HUB_CREDS_USR}/backend:latest
     container_name: backend
     environment:
         - DOCKER_HUB_CREDS = ${DOCKER_HUB_CREDS}
-        - DATABASE_URI = ${DATABASE_URI}
+        - DATABASE_URI=mysql+pymysql://flask:flask@mysql/flask
         - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
         - MYSQL_DATABASE=${MYSQL_DATABASE}
         - MYSQL_USER=${MYSQL_USER}   
