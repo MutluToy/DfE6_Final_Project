@@ -22,7 +22,7 @@ services:
     container_name: frontend
     ports:
       - target: 5000
-        published: 80
+        published: 8080
   backend:
     build: ./backend
     image: ${DOCKER_HUB_CREDS_USR}/backend:latest
