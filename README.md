@@ -83,7 +83,7 @@ By the use of pytest and Jenkins, I created the test logs, test coverages and re
 
 All the tests passed 100%.
 
-## Other Links
+## Other Link
 
 In the video you can see the brief of the application.
 
