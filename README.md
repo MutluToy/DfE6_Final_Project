@@ -51,7 +51,7 @@ The Jira project board helped me to plan and  complete the project. The categori
 
 ## Application
 
-The application is a microservice Flask application that serves both the frontend and backend of the application.
+The application is a micro-service Flask application that serves both the frontend and backend of the application.
 
 The frontend aspect of the app uses HTML templates to serve the web pages that allows the user to perform CRUD functionality with information from the database.
 
@@ -63,7 +63,17 @@ The CI/CD pipeline is important part of the process of the integration and relea
 
 ![CI_CD](https://user-images.githubusercontent.com/43039925/147859099-34e70702-eb7a-41f1-a947-45b8034e4c1c.png)
 
+1. The VM and the Database are connected and communicate through the SQL Query, which is part of the code. This VM sends a message regarding any needed additions and changes that is created on the application website. The database also keeps track of this and allows the application to store more data. The SQL query is important to manage the database. 
 
+2. To update the website, I push the changes to my github repository. This allows me automatically deploy the changes into Jenkins through a webhook. The webhook sends Jenkins that there are new changes and must be set for deployment. Jenkins gets this code from my GitHub repository and selects the branch to get this changes from
+
+3. Once the code is received in Jenkins, it goes through a pipeline. It follows the Jenkinsfile Script that I have in my folder, which handles the setup, deploy, build, testing and push requirements for my website.
+ 
+4. The Jenkins uses the results from testing to create a visual representation of my test results, which is used for development. 
+
+5. The Jenkinsfile also contains a command "docker-compose build", which builds this. Since my VM is connected to a swarm manager, The swarm manager builds and deploys the website for use. 
+
+6. Now the website is built and the user can interact with it. Any additions and creations will be notified to the swarm manager and into my developement/worker node. This will add any of the changes into the database. 
 
 ## Testing
 
