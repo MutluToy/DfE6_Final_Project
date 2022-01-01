@@ -39,4 +39,5 @@ My objective with this project is to achieve the following:
 
 ## Project Management and Version Control
 
-![GitHub Project Board](file:///Users/mutlutoy/Documents/aaa_project%20images/Jira%20Screenshot.png)
+![GitHub Project Board]
+![Jira Screenshot](https://user-images.githubusercontent.com/43039925/147856876-ee9bb753-0263-4c3d-b3cb-6e278531ed4f.png)
