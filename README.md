@@ -67,7 +67,7 @@ The CI/CD pipeline is important part of the process of the integration and relea
 
 1. The VM and the Database are connected and communicate through the SQL Query, which is part of the code. This VM sends a message regarding any needed additions and changes that is created on the application website. The database also keeps track of this and allows the application to store more data. The SQL query is important to manage the database. 
 
-2. To update the website, I push the changes to my github repository. This allows me automatically deploy the changes into Jenkins through a webhook. The webhook sends Jenkins that there are new changes and must be set for deployment. Jenkins gets this code from my GitHub repository and selects the branch to get this changes from
+2. To update the website, I push the changes to my github repository. This allows me automatically deploy the changes into Jenkins through a webhook. The webhook sends Jenkins that there are new changes and must be set for deployment. Jenkins gets this code from my GitHub.
 
 3. Once the code is received in Jenkins, it goes through a pipeline. It follows the Jenkinsfile Script that I have in my folder, which handles the setup, deploy, build, testing and push requirements for my website.
  
