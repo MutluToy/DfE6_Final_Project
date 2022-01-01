@@ -37,3 +37,6 @@ My objective with this project is to achieve the following:
 
 •	To create a continuous integration (CI)/continuous deployment (CD) pipeline that will automatically test, build and deploy your application.
 
+## Project Management and Version Control
+
+![GitHub Project Board](file:///Users/mutlutoy/Documents/aaa_project%20images/Jira%20Screenshot.png)
