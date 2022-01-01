@@ -57,6 +57,8 @@ The frontend aspect of the app uses HTML templates to serve the web pages that a
 
 The backend aspect of the application uses SQLAlchemy to model and integrate with the database.
 
+![Home Page](https://user-images.githubusercontent.com/43039925/147860994-d02b0903-c0fc-424a-9f26-9ca881b08446.png)
+
 ## CI/CD Pipeline
 
 The CI/CD pipeline is important part of the process of the integration and release of the website. 
