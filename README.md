@@ -59,6 +59,23 @@ The backend aspect of the application uses SQLAlchemy to model and integrate wit
 
 ## CI/CD Pipeline
 
-The CI/CD pipeline is important part of the process of the integration and release of the website.
+The CI/CD pipeline is important part of the process of the integration and release of the website. 
 
 ![CI_CD](https://user-images.githubusercontent.com/43039925/147859099-34e70702-eb7a-41f1-a947-45b8034e4c1c.png)
+
+
+
+## Testing
+
+By the use of pytest and Jenkins, I created the test logs, test coverages and reports. The Jenkins pipelines reads these test to translate these data into easily read information.
+
+![Test](https://user-images.githubusercontent.com/43039925/147859257-22ce5dfb-49b3-472c-b782-b607f150532b.png)
+
+All the tests passed 100%.
+
+## Video 
+
+In the video you can see the brief of the application.
+
+https://drive.google.com/file/d/1hN8tax4lXNzal95UIfqmTxf8eRp2vteU/view?usp=sharing
+
